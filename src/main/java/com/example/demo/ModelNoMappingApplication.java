@@ -21,13 +21,14 @@ public class ModelNoMappingApplication implements CommandLineRunner{
 	@Autowired AddressDAO addressDB;
 	
 	public static void main(String[] args) {
+		System.out.println("main start");//this line : execute after run()
 		SpringApplication.run(ModelNoMappingApplication.class, args);
-		System.out.println("main");//this line : execute after run()
+		System.out.println("main end");//this line : execute after run()
 	}
 	
 	
 	public void run(String... args) throws Exception {
-		System.out.println("command line..");
+		System.out.println("command line..start");
 		
 		/** address dummy data **/
 		log_.info("__________ address dummy data");
@@ -54,6 +55,8 @@ public class ModelNoMappingApplication implements CommandLineRunner{
 		/** Test **/
 		System.out.println("All Address: \n"+addressDB.findAll());
 		System.out.println("All Users: \n"+userdb.findAll());
+		
+		System.out.println("command line..end");
 	}
 
 }
